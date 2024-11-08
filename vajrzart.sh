@@ -3,6 +3,13 @@
 # Basic error handling
 set -euo pipefail
 
+check_dep() {
+    if ! command -v dialog >/dev/null 2>&1; then
+        apt-get update >/dev/null 2>&1
+        apt-get install -y dialog >/dev/null 2>&1
+    fi
+}
+
 # Function to check if script is run as root
 check_root() {
     if [ "$(id -u)" -ne 0 ]; then
@@ -173,6 +180,7 @@ if [ "${1:-}" = "add" ]; then
 fi
 
 # Initial setup
+check_dep
 install_wireguard
 
 temp_file=$(mktemp)
