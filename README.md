@@ -1,4 +1,6 @@
-# 🌟 Vajrzart: Your Friendly Neighborhood VPN Wizard 🧙‍♂️
+# 🧙‍♂️ Your Friendly Neighborhood VPN Wizard 🧙‍♂️
+
+*Using WireGuard!*
 
 > Because setting up WireGuard shouldn't feel like solving a Rubik's cube blindfolded! 🎯
 
@@ -7,7 +9,7 @@
 Tired of manually configuring WireGuard like it's 1999? Say hello to **Vajrzart** - your automated WireGuard setup script that turns the painful process into a magical journey! 
 
 ```
-                    ⚡ VAJRZART ⚡
+                       ⚡ VAJRZART ⚡
         Making VPNs Great Again, One Peer at a Time
 ```
 
@@ -32,6 +34,7 @@ Tired of manually configuring WireGuard like it's 1999? Say hello to **Vajrzart*
 
 ### 1. Initial Setup
 ```bash
+chmod +x vajrzart.sh
 sudo ./vajrzart.sh
 ```
 That's it! Just kidding, there's more, but the script handles it all! 
@@ -53,6 +56,7 @@ Now comes the fun part - getting the goodies to your client:
    - *Carrier pigeon optional but not recommended*
 2. 🚀 On the client machine, unleash the magic:
    ```bash
+   chmod +x vajrzart_client.sh
    sudo ./vajrzart_client.sh (client_config).conf
    ```
 3. 🎪 Sit back and watch the show!
@@ -105,8 +109,8 @@ Free as in "free pizza" (but please buy me a coffee if you like it)
 Remember: VPNs are like underwear - everyone needs them, but not everyone talks about them.
 
 ```
-                            Stay Safe, Stay Connected!
-                    💫 Some idiot trying to programm things 💫
+                             Stay Safe, Stay Connected!
+                    💫 Some idiot trying to program things 💫
 ```
 
 ---
