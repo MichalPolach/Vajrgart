@@ -11,6 +11,13 @@ check_root() {
     fi
 }
 
+check_dep() {
+    if ! command -v dialog >/dev/null 2>&1; then
+        apt-get update >/dev/null 2>&1
+        apt-get install -y dialog >/dev/null 2>&1
+    fi
+}
+
 # Function to install WireGuard if not already installed
 install_wireguard() {
     if ! command -v wg-quick >/dev/null 2>&1; then
@@ -60,6 +67,7 @@ if [ -z "${1:-}" ]; then
     exit 1
 fi
 
+check_dep
 install_wireguard
 
 wireguard_dir="/etc/wireguard"
