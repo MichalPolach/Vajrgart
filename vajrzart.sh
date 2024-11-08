@@ -3,18 +3,18 @@
 # Basic error handling
 set -euo pipefail
 
-check_dep() {
-    if ! command -v dialog >/dev/null 2>&1; then
-        apt-get update >/dev/null 2>&1
-        apt-get install -y dialog >/dev/null 2>&1
-    fi
-}
-
 # Function to check if script is run as root
 check_root() {
     if [ "$(id -u)" -ne 0 ]; then
         echo "ERROR: This script must be run as root!"
         exit 1
+    fi
+}
+
+check_dep() {
+    if ! command -v dialog >/dev/null 2>&1; then
+        apt-get update >/dev/null 2>&1
+        apt-get install -y dialog >/dev/null 2>&1
     fi
 }
 
